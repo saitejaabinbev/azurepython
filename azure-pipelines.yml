@@ -22,6 +22,15 @@ steps:
 - script: |
     python -m pip install --upgrade pip
     pip install -r requirements.txt
+    $config = Get-Content (Get-Item .\config.json) -Raw -Encoding UTF8 | ConvertFrom-Json
+
+                #set the credentials
+                $config.username = "$(USERNAME)" #assuming that you already have it
+                $config.password = "$(PASSWORD)" #assuming that you already have it
+
+
+                #update the file
+                $config | ConvertTo-Json | Set-Content .\config.json
   displayName: 'Install dependencies'
 
 - task: PythonScript@0
