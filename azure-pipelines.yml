@@ -30,3 +30,7 @@ steps:
 
 - script: python SamplePython.py
   displayName: 'pytest'
+- task: PythonScript@0
+  inputs:
+    scriptSource: 'filePath'
+    scriptPath: '/Sample1/*.py'
