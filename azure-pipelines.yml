@@ -22,7 +22,7 @@ steps:
 - script: |
     python -m pip install --upgrade pip
     pip install -r requirements.txt
-    $config = Get-Content (Get-Item .\Sample1\config.json) -Raw -Encoding UTF8 | ConvertFrom-Json
+    $config = Get-Content (Get-Item .\config.json) -Raw -Encoding UTF8 | ConvertFrom-Json
 
                 #set the credentials
                 $config.username = "$(USERNAME)" #assuming that you already have it
