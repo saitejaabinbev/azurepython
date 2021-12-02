@@ -13,6 +13,7 @@ class TestStringMethods(unittest.TestCase):
       username = data['username']
       password = data['password']
       print("username : ",username)
+      print("Password : ",password)
       print("Data : ",data)
       print(os.environ.get("h"))
       self.assertEqual("1","1","Values not as per expectation @@")
